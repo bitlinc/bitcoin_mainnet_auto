@@ -7,10 +7,10 @@ After=network.target
 
 [Service]
 #ExecStartPre=/bin/sh -c 'sleep 10'
-ExecStart=/usr/local/bin/bitcoind -daemon
 PIDFile=/home/bitcoin/.bitcoin/bitcoind.pid
+ExecStart=/usr/local/bin/bitcoind
 User=bitcoin
-Group=
+Group=bitcoin
 Type=forking
 KillMode=process
 Restart=always
