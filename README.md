@@ -1,14 +1,14 @@
-# Auto Start Bitcoind Testnet On Boot
+# Auto Start Bitcoind Mainnet On Boot
 # /etc/systemd/system/bitcoind_mainnet.service
 
 [Unit]
-Description=Bitcoin daemon
+Description=Bitcoin daemon mainnet
 After=network.target
 
 [Service]
-#ExecStartPre=/bin/sh -c 'sleep 10'
+ExecStartPre=/bin/sh -c 'sleep 30'
+ExecStart=/usr/local/bin/bitcoind -daemon -conf=/home/pi/.bitcoin/bitcoin.conf -pid=/home/pi/.bitcoin/bitcoind.pid
 PIDFile=/home/pi/.bitcoin/bitcoind.pid
-ExecStart=/usr/local/bin/bitcoind
 User=pi
 Group=pi
 Type=forking
