@@ -6,7 +6,7 @@ Description=Bitcoin daemon mainnet
 After=network.target
 
 [Service]
-ExecStartPre=/bin/sh -c 'sleep 5'
+#ExecStartPre=/bin/sh -c 'sleep 5'
 ExecStart=/usr/local/bin/bitcoind -daemon -conf=/home/pi/.bitcoin/bitcoin.conf -pid=/home/pi/.bitcoin/bitcoind.pid
 PIDFile=/home/pi/.bitcoin/bitcoind.pid
 User=pi
